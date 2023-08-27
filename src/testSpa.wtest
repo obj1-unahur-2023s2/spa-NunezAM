@@ -1,0 +1,21 @@
+import spa.*
+import personas.*
+
+test "Spa atiende a Ramiro" {
+	
+	ramiro.jugarAlPaddle()
+	ramiro.comerBigMac()
+	spa.atender(ramiro)
+	
+	assert.notThat(ramiro.tienePielGrasosa())
+	assert.equals(1, ramiro.nivelDeContractura())
+	
+}
+
+test "Spa atiende a todo el mundo" {
+	spa.atender(olivia)
+	spa.atender(bruno)
+	
+	assert.equals(9, olivia.gradoDeConcentracion())
+	assert.that(bruno.tieneSed())
+}
